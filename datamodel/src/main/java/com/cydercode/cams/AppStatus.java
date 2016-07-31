@@ -13,6 +13,13 @@ public class AppStatus {
 
     private long systemUptime;
 
+    public AppStatus(String instanceName, Health health, long appUptime, long systemUptime) {
+        this.instanceName = instanceName;
+        this.health = health;
+        this.appUptime = appUptime;
+        this.systemUptime = systemUptime;
+    }
+
     public String getInstanceName() {
         return instanceName;
     }
