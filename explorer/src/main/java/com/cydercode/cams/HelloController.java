@@ -40,11 +40,4 @@ public class HelloController {
             node.getController().reload();
         }
     }
-
-    @FXML
-    public void getAllUrls() {
-        for (Node node : nodes) {
-            node.getController().setStatus("Statu!!!");
-        }
-    }
 }

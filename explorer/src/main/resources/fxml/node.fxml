@@ -7,43 +7,40 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox xmlns="http://javafx.com/javafx/8.0.102-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cydercode.cams.NodeController">
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cydercode.cams.NodeController">
    <children>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="5.0">
+      <HBox prefHeight="0.0" prefWidth="400.0" spacing="5.0">
          <children>
-            <Label text="Node url">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Label>
-            <TextField fx:id="urlField">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </TextField>
+            <Label text="URL" />
+            <TextField fx:id="urlField" HBox.hgrow="ALWAYS" />
          </children>
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
       </HBox>
-   </children>
-   <children>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="5.0">
+      <VBox prefHeight="0.0" prefWidth="100.0">
          <children>
-            <Label text="Status">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Label>
-            <TextField fx:id="statusField">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </TextField>
+            <Label text="Instance name" />
+            <Label fx:id="instanceNameLabel" text="Tigaro" />
          </children>
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </HBox>
+      </VBox>
+      <VBox prefHeight="0.0" prefWidth="100.0">
+         <children>
+            <Label text="Health" />
+            <Label fx:id="healthLabel" text="Healhy" />
+         </children>
+      </VBox>
+      <VBox prefHeight="0.0" prefWidth="100.0">
+         <children>
+            <Label text="App uptime" />
+            <Label fx:id="appUptimeLabel" text="123" />
+         </children>
+      </VBox>
+      <VBox prefHeight="0.0" prefWidth="100.0">
+         <children>
+            <Label text="System uptime" />
+            <Label fx:id="systemUptimeLabel" text="143245" />
+         </children>
+      </VBox>
    </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 </VBox>

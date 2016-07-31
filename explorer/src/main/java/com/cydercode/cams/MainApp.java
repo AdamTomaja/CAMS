@@ -26,7 +26,7 @@ public class MainApp extends Application {
         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
         log.debug("Showing JFX scene");
-        Scene scene = new Scene(rootNode, 400, 200);
+        Scene scene = new Scene(rootNode, 800, 600);
 
         stage.setTitle("CAMS Explorer");
         stage.setScene(scene);
