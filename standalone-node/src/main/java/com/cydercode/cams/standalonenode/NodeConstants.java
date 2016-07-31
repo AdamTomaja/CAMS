@@ -1,4 +1,4 @@
-package com.cydercode.cams;
+package com.cydercode.cams.standalonenode;
 
 /**
  * @author Adam Tomaja

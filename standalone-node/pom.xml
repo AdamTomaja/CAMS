@@ -10,8 +10,8 @@
 
     <groupId>com.cydercode.cams</groupId>
     <artifactId>standalone-node</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
 
     <name>standalone-node</name>
     <url>http://maven.apache.org</url>

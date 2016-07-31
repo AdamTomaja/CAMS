@@ -1,4 +1,4 @@
-package com.cydercode.cams;
+package com.cydercode.cams.standalonenode;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

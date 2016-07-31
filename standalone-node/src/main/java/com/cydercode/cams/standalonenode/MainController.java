@@ -1,5 +1,8 @@
-package com.cydercode.cams;
+package com.cydercode.cams.standalonenode;
 
+import com.cydercode.cams.datamodel.AppStatus;
+import com.cydercode.cams.datamodel.AppStatusBuilder;
+import com.cydercode.cams.datamodel.Health;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,9 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static com.cydercode.cams.AppStatusBuilder.createAppStatusBuilder;
-import static com.cydercode.cams.NodeConstants.STATUS_PATH;
 
 /**
  * @author Adam Tomaja
@@ -31,9 +31,9 @@ public class MainController {
         instanceStartTime = getCurrentTimestamp();
     }
 
-    @RequestMapping(value = STATUS_PATH, method = RequestMethod.GET)
+    @RequestMapping(value = NodeConstants.STATUS_PATH, method = RequestMethod.GET)
     public AppStatus getStatus() throws Exception {
-        return createAppStatusBuilder().setAppUptime(getAppUptime())
+        return AppStatusBuilder.createAppStatusBuilder().setAppUptime(getAppUptime())
                 .setSystemUptime(getSystemUptime())
                 .setHealth(Health.HEALTHY)
                 .setInstanceName(instanceName).create();

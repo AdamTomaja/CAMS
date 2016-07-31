@@ -1,5 +1,7 @@
-package com.cydercode.cams;
+package com.cydercode.cams.nodeclient;
 
+import com.cydercode.cams.datamodel.AppStatus;
+import com.cydercode.cams.standalonenode.NodeConstants;
 import org.springframework.web.client.RestTemplate;
 
 /**
