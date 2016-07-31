@@ -10,15 +10,20 @@
     <name>cams</name>
     <url>http://maven.apache.org</url>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.0.RELEASE</version>
+    </parent>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cams.version>1.0-SNAPSHOT</cams.version>
     </properties>
 
     <modules>
-        <module>./datamodel</module>
-        <module>./standalone-node</module>
-        <module>./node-client</module>
+        <module>datamodel</module>
+        <module>standalone-node</module>
+        <module>node-client</module>
     </modules>
 
     <build>

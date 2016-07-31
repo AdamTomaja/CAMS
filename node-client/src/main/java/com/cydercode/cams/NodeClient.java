@@ -16,6 +16,6 @@ public class NodeClient {
     }
 
     public AppStatus getStatus() {
-        return restTemplate.getForObject(nodeUrl + "/cams/status", AppStatus.class);
+        return restTemplate.getForObject(nodeUrl + NodeConstants.STATUS_PATH, AppStatus.class);
     }
 }

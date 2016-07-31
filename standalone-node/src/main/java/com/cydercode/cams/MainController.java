@@ -14,6 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.cydercode.cams.AppStatusBuilder.createAppStatusBuilder;
+import static com.cydercode.cams.NodeConstants.STATUS_PATH;
 
 /**
  * @author Adam Tomaja
@@ -30,7 +31,7 @@ public class MainController {
         instanceStartTime = getCurrentTimestamp();
     }
 
-    @RequestMapping(value = "/cams/status", method = RequestMethod.GET)
+    @RequestMapping(value = STATUS_PATH, method = RequestMethod.GET)
     public AppStatus getStatus() throws Exception {
         return createAppStatusBuilder().setAppUptime(getAppUptime())
                 .setSystemUptime(getSystemUptime())
