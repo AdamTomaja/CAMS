@@ -12,6 +12,8 @@
             <items>
                 <Button mnemonicParsing="false" onAction="#addNewNode" text="Add node" />
             <Button mnemonicParsing="false" onAction="#reloadAll" text="Reload all " />
+                <Button mnemonicParsing="false" onAction="#save" text="Save" />
+
             </items>
         </ToolBar>
     </top>
