@@ -1,6 +1,7 @@
 package com.cydercode.cams;
 
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.layout.VBox;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,9 +48,21 @@ public class HelloController {
 
     public void addNewNode(String url) throws IOException {
         Node node = nodeFactory.create();
-        node.getController().setUrl(url);
+        NodeController controller = node.getController();
+        Parent component = node.getComponent();
+
+        controller.setUrl(url);
         nodes.add(node);
-        nodesContainer.getChildren().add(node.getComponent());
+        nodesContainer.getChildren().add(component);
+
+        controller.addRemoveHandler(ev -> {
+            nodes.remove(node);
+            nodesContainer.getChildren().remove(component);
+        });
+
+        new  Thread(() -> {
+            controller.reload();
+        }).start();
     }
 
     @FXML
