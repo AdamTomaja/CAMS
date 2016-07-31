@@ -9,16 +9,12 @@
     </parent>
 
     <groupId>com.cydercode.cams</groupId>
-    <artifactId>datamodel</artifactId>
+    <artifactId>standalone-node</artifactId>
     <version>${cams.version}</version>
     <packaging>jar</packaging>
 
-    <name>datamodel</name>
+    <name>standalone-node</name>
     <url>http://maven.apache.org</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <dependency>
