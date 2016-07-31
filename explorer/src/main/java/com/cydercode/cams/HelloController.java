@@ -1,46 +1,50 @@
 package com.cydercode.cams;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import org.apache.commons.lang.StringUtils;
+import javafx.scene.layout.VBox;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class HelloController
-{
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class HelloController {
+
     private static final Logger log = LoggerFactory.getLogger(HelloController.class);
 
-    @FXML private TextField firstNameField;
-    @FXML private TextField lastNameField;
-    @FXML private Label messageLabel;
+    private final NodeFactory nodeFactory = new NodeFactory();
 
-    public void sayHello() {
+    private final List<Node> nodes = new ArrayList<>();
 
-        String firstName = firstNameField.getText();
-        String lastName = lastNameField.getText();
+    @FXML
+    public VBox nodesContainer;
 
-        StringBuilder builder = new StringBuilder();
+    @FXML
+    public void initialize() throws IOException {
+        log.info("Inited");
+        addNewNode();
+    }
 
-        if (!StringUtils.isEmpty(firstName)) {
-            builder.append(firstName);
-        }
+    @FXML
+    public void addNewNode() throws IOException {
+        Node node = nodeFactory.create();
+        node.getController().setUrl("http://cydercode.pl:8083/cams-node/");
+        nodes.add(node);
+        nodesContainer.getChildren().add(node.getComponent());
+    }
 
-        if (!StringUtils.isEmpty(lastName)) {
-            if (builder.length() > 0) {
-                builder.append(" ");
-            }
-            builder.append(lastName);
-        }
-
-        if (builder.length() > 0) {
-            String name = builder.toString();
-            log.debug("Saying hello to " + name);
-            messageLabel.setText("Hello " + name);
-        } else {
-            log.debug("Neither first name nor last name was set, saying hello to anonymous person");
-            messageLabel.setText("Hello mysterious person");
+    @FXML
+    public void reloadAll() {
+        for (Node node : nodes) {
+            node.getController().reload();
         }
     }
 
+    @FXML
+    public void getAllUrls() {
+        for (Node node : nodes) {
+            node.getController().setStatus("Statu!!!");
+        }
+    }
 }
