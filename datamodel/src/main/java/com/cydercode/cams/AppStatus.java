@@ -5,11 +5,21 @@ package com.cydercode.cams;
  */
 public class AppStatus {
 
+    private String instanceName;
+
     private Health health;
 
     private long appUptime;
 
     private long systemUptime;
+
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+    }
 
     public Health getHealth() {
         return health;
