@@ -27,9 +27,8 @@ public class MainApp extends Application {
 
         log.debug("Showing JFX scene");
         Scene scene = new Scene(rootNode, 400, 200);
-        scene.getStylesheets().add("/styles/styles.css");
 
-        stage.setTitle("Hello JavaFX and Maven");
+        stage.setTitle("CAMS Explorer");
         stage.setScene(scene);
         stage.show();
     }
