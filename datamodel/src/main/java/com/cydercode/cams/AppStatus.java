@@ -13,6 +13,10 @@ public class AppStatus {
 
     private long systemUptime;
 
+    public AppStatus() {
+
+    }
+
     public AppStatus(String instanceName, Health health, long appUptime, long systemUptime) {
         this.instanceName = instanceName;
         this.health = health;
@@ -50,5 +54,15 @@ public class AppStatus {
 
     public void setSystemUptime(long systemUptime) {
         this.systemUptime = systemUptime;
+    }
+
+    @Override
+    public String toString() {
+        return "AppStatus{" +
+                "instanceName='" + instanceName + '\'' +
+                ", health=" + health +
+                ", appUptime=" + appUptime +
+                ", systemUptime=" + systemUptime +
+                '}';
     }
 }

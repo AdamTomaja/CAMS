@@ -18,6 +18,7 @@
     <modules>
         <module>./datamodel</module>
         <module>./standalone-node</module>
+        <module>./node-client</module>
     </modules>
 
     <build>
