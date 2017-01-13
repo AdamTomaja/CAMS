@@ -15,7 +15,7 @@
     <name>explorer</name>
 
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>${cams.version}</version>
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
@@ -100,7 +100,7 @@
         <dependency>
             <groupId>com.cydercode.cams</groupId>
             <artifactId>node-client</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${cams.version}</version>
         </dependency>
 
         <dependency>

@@ -1,15 +1,21 @@
 package com.cydercode.cams.datamodel;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Adam Tomaja
  */
 public class AppStatusBuilder {
-    private String instanceName;
-    private Health health;
-    private long appUptime;
-    private long systemUptime;
+
+    String instanceName;
+    Health health;
+    long appUptime;
+    long systemUptime;
+    Map<String, Object> metadata = new HashMap<>();
 
     private AppStatusBuilder() {
+        //
     }
 
     public static AppStatusBuilder createAppStatusBuilder() {
@@ -36,7 +42,20 @@ public class AppStatusBuilder {
         return this;
     }
 
-    public AppStatus create() {
-        return new AppStatus(instanceName, health, appUptime, systemUptime);
+    public AppStatusBuilder withMetadata(String name, Object value) {
+        metadata.put(name, value);
+        return this;
+    }
+
+    public AppStatus build() {
+        AppStatus status = new AppStatus();
+
+        status.setInstanceName(instanceName);
+        status.setAppUptime(appUptime);
+        status.setHealth(health);
+        status.setSystemUptime(systemUptime);
+        status.setMetadata(metadata);
+
+        return status;
     }
 }

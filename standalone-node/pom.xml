@@ -11,7 +11,7 @@
     <groupId>com.cydercode.cams</groupId>
     <artifactId>standalone-node</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>${cams.version}</version>
 
     <name>standalone-node</name>
     <url>http://maven.apache.org</url>
@@ -32,7 +32,7 @@
         <dependency>
             <groupId>com.cydercode.cams</groupId>
             <artifactId>datamodel</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${cams.version}</version>
         </dependency>
     </dependencies>
 

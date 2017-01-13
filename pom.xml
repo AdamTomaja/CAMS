@@ -19,13 +19,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <cams.version>1.0-SNAPSHOT</cams.version>
     </properties>
 
     <modules>
-        <module>./datamodel</module>
-        <module>./standalone-node</module>
-        <module>./node-client</module>
-        <module>./explorer</module>
+        <module>datamodel</module>
+        <module>standalone-node</module>
+        <module>node-client</module>
+        <module>explorer</module>
     </modules>
 
     <build>

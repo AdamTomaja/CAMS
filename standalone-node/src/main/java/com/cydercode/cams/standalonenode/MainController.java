@@ -16,6 +16,8 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.cydercode.cams.datamodel.Constants.*;
+
 /**
  * @author Adam Tomaja
  */
@@ -31,12 +33,13 @@ public class MainController {
         instanceStartTime = getCurrentTimestamp();
     }
 
-    @RequestMapping(value = NodeConstants.STATUS_PATH, method = RequestMethod.GET)
+    @RequestMapping(value = STATUS_PATH, method = RequestMethod.GET)
     public AppStatus getStatus() throws Exception {
         return AppStatusBuilder.createAppStatusBuilder().setAppUptime(getAppUptime())
                 .setSystemUptime(getSystemUptime())
                 .setHealth(Health.HEALTHY)
-                .setInstanceName(instanceName).create();
+                .withMetadata(NODE_TYPE, NODE_TYPE_STANDALONE)
+                .setInstanceName(instanceName).build();
     }
 
     private long getAppUptime() {

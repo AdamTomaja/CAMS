@@ -1,7 +1,7 @@
 package com.cydercode.cams.nodeclient;
 
 import com.cydercode.cams.datamodel.AppStatus;
-import com.cydercode.cams.standalonenode.NodeConstants;
+import com.cydercode.cams.datamodel.Constants;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -18,6 +18,6 @@ public class NodeClient {
     }
 
     public AppStatus getStatus() {
-        return restTemplate.getForObject(nodeUrl + NodeConstants.STATUS_PATH, AppStatus.class);
+        return restTemplate.getForObject(nodeUrl + Constants.STATUS_PATH, AppStatus.class);
     }
 }

@@ -29,6 +29,8 @@ public class NodeController {
 
     @FXML
     private Label healthLabel;
+    @FXML
+    private Label metadataLabel;
 
     @FXML
     private Button removeButton;
@@ -43,6 +45,7 @@ public class NodeController {
                 appUptimeLabel.setText(String.valueOf(status.getAppUptime()));
                 systemUptimeLabel.setText(String.valueOf(status.getSystemUptime()));
                 healthLabel.setText(status.getHealth().toString());
+                metadataLabel.setText(status.getMetadata().toString());
             });
 
         } catch (Exception e) {

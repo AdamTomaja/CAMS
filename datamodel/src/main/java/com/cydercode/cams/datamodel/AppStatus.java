@@ -1,5 +1,9 @@
 package com.cydercode.cams.datamodel;
 
+import com.google.common.base.Objects;
+
+import java.util.Map;
+
 /**
  * @author Adam Tomaja
  */
@@ -13,15 +17,10 @@ public class AppStatus {
 
     private long systemUptime;
 
+    private Map<String, Object> metadata;
+
     public AppStatus() {
 
-    }
-
-    public AppStatus(String instanceName, Health health, long appUptime, long systemUptime) {
-        this.instanceName = instanceName;
-        this.health = health;
-        this.appUptime = appUptime;
-        this.systemUptime = systemUptime;
     }
 
     public String getInstanceName() {
@@ -56,6 +55,14 @@ public class AppStatus {
         this.systemUptime = systemUptime;
     }
 
+    public Map<String, Object> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(Map<String, Object> metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public String toString() {
         return "AppStatus{" +
@@ -64,5 +71,22 @@ public class AppStatus {
                 ", appUptime=" + appUptime +
                 ", systemUptime=" + systemUptime +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AppStatus appStatus = (AppStatus) o;
+        return appUptime == appStatus.appUptime &&
+                systemUptime == appStatus.systemUptime &&
+                Objects.equal(instanceName, appStatus.instanceName) &&
+                health == appStatus.health &&
+                Objects.equal(metadata, appStatus.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(instanceName, health, appUptime, systemUptime, metadata);
     }
 }
