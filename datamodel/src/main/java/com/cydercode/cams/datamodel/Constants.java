@@ -12,4 +12,5 @@ public interface Constants {
     String TOTAL_DISK_SPACE = "Total-Disk-Space";
     String SYSTEM_UPTIME = "System-Uptime";
     String NODE_UPTIME = "Node-Uptime";
+    String ONLINE_SERVICES = "Online-Services";
 }
