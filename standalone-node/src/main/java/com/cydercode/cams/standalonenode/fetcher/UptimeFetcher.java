@@ -17,6 +17,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.cydercode.cams.datamodel.Constants.NODE_UPTIME;
+import static com.cydercode.cams.datamodel.Constants.TIMESTAMP;
+
 /**
  * @author Adam Tomaja
  */
@@ -49,7 +52,9 @@ public class UptimeFetcher implements Fetcher {
             LOGGER.error("Cannot fetch system uptime", e);
         }
 
-        result.put(Constants.NODE_UPTIME, getNodeUptime());
+        result.put(NODE_UPTIME, getNodeUptime());
+
+        result.put(TIMESTAMP, new Date().getTime());
 
         return result;
     }
