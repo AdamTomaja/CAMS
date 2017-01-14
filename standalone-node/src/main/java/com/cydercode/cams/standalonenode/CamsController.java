@@ -19,7 +19,7 @@ import static com.cydercode.cams.datamodel.Constants.*;
  * @author Adam Tomaja
  */
 @RestController
-public class MainController {
+public class CamsController {
 
     @Value("${cams.instancename}")
     private String instanceName;
