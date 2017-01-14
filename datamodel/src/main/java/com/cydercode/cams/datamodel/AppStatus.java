@@ -1,5 +1,6 @@
 package com.cydercode.cams.datamodel;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
 import java.util.Map;
@@ -12,10 +13,6 @@ public class AppStatus {
     private String instanceName;
 
     private Health health;
-
-    private long appUptime;
-
-    private long systemUptime;
 
     private Map<String, Object> metadata;
 
@@ -39,22 +36,6 @@ public class AppStatus {
         this.health = health;
     }
 
-    public long getAppUptime() {
-        return appUptime;
-    }
-
-    public void setAppUptime(long appUptime) {
-        this.appUptime = appUptime;
-    }
-
-    public long getSystemUptime() {
-        return systemUptime;
-    }
-
-    public void setSystemUptime(long systemUptime) {
-        this.systemUptime = systemUptime;
-    }
-
     public Map<String, Object> getMetadata() {
         return metadata;
     }
@@ -65,12 +46,11 @@ public class AppStatus {
 
     @Override
     public String toString() {
-        return "AppStatus{" +
-                "instanceName='" + instanceName + '\'' +
-                ", health=" + health +
-                ", appUptime=" + appUptime +
-                ", systemUptime=" + systemUptime +
-                '}';
+        return MoreObjects.toStringHelper(this)
+                .add("instanceName", instanceName)
+                .add("health", health)
+                .add("metadata", metadata)
+                .toString();
     }
 
     @Override
@@ -78,15 +58,13 @@ public class AppStatus {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AppStatus appStatus = (AppStatus) o;
-        return appUptime == appStatus.appUptime &&
-                systemUptime == appStatus.systemUptime &&
-                Objects.equal(instanceName, appStatus.instanceName) &&
+        return Objects.equal(instanceName, appStatus.instanceName) &&
                 health == appStatus.health &&
                 Objects.equal(metadata, appStatus.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(instanceName, health, appUptime, systemUptime, metadata);
+        return Objects.hashCode(instanceName, health, metadata);
     }
 }

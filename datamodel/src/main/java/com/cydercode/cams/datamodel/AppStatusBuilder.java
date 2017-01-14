@@ -10,8 +10,6 @@ public class AppStatusBuilder {
 
     String instanceName;
     Health health;
-    long appUptime;
-    long systemUptime;
     Map<String, Object> metadata = new HashMap<>();
 
     private AppStatusBuilder() {
@@ -32,18 +30,13 @@ public class AppStatusBuilder {
         return this;
     }
 
-    public AppStatusBuilder setAppUptime(long appUptime) {
-        this.appUptime = appUptime;
-        return this;
-    }
-
-    public AppStatusBuilder setSystemUptime(long systemUptime) {
-        this.systemUptime = systemUptime;
-        return this;
-    }
-
     public AppStatusBuilder withMetadata(String name, Object value) {
         metadata.put(name, value);
+        return this;
+    }
+
+    public AppStatusBuilder withMetadatas(Map<String, Object> metadatas) {
+        metadata.putAll(metadatas);
         return this;
     }
 
@@ -51,9 +44,7 @@ public class AppStatusBuilder {
         AppStatus status = new AppStatus();
 
         status.setInstanceName(instanceName);
-        status.setAppUptime(appUptime);
         status.setHealth(health);
-        status.setSystemUptime(systemUptime);
         status.setMetadata(metadata);
 
         return status;

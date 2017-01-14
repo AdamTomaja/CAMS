@@ -28,9 +28,7 @@
     </properties>
 
     <build>
-
         <finalName>explorer</finalName>
-
         <plugins>
 
             <plugin>
@@ -38,17 +36,13 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.1.5</version>
                 <configuration>
-
                     <mainClass>com.cydercode.cams.MainApp</mainClass>
-
                     <!-- only required if signing the jar file -->
                     <keyStoreAlias>example-user</keyStoreAlias>
                     <keyStorePassword>example-password</keyStorePassword>
                     <allPermissions>true</allPermissions>
-
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 

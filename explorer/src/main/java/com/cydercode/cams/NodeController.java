@@ -22,12 +22,6 @@ public class NodeController {
     private Label instanceNameLabel;
 
     @FXML
-    private Label appUptimeLabel;
-
-    @FXML
-    private Label systemUptimeLabel;
-
-    @FXML
     private Label healthLabel;
     @FXML
     private Label metadataLabel;
@@ -42,8 +36,6 @@ public class NodeController {
 
             Platform.runLater(() -> {
                 instanceNameLabel.setText(status.getInstanceName());
-                appUptimeLabel.setText(String.valueOf(status.getAppUptime()));
-                systemUptimeLabel.setText(String.valueOf(status.getSystemUptime()));
                 healthLabel.setText(status.getHealth().toString());
                 metadataLabel.setText(status.getMetadata().toString());
             });

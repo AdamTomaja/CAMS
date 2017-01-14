@@ -15,8 +15,6 @@ public class AppStatusBuilderTest {
         // given
         AppStatusBuilder builder = createAppStatusBuilder()
                 .setInstanceName("Test")
-                .setSystemUptime(1234)
-                .setAppUptime(123)
                 .withMetadata("Sys", "Windows")
                 .setHealth(Health.HEALTHY);
 
@@ -24,9 +22,7 @@ public class AppStatusBuilderTest {
         AppStatus appStatus = builder.build();
 
         // then
-        assertThat(appStatus.getAppUptime()).isEqualTo(123);
         assertThat(appStatus.getInstanceName()).isEqualTo("Test");
-        assertThat(appStatus.getSystemUptime()).isEqualTo(1234);
         assertThat(appStatus.getMetadata().get("Sys")).isEqualTo("Windows");
         assertThat(appStatus.getHealth()).isEqualTo(Health.HEALTHY);
     }

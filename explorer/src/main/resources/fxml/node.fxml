@@ -30,18 +30,6 @@
       </VBox>
       <VBox prefHeight="0.0" prefWidth="100.0">
          <children>
-            <Label text="App uptime" />
-            <Label fx:id="appUptimeLabel" text="123" />
-         </children>
-      </VBox>
-      <VBox prefHeight="0.0" prefWidth="100.0">
-         <children>
-            <Label text="System uptime" />
-            <Label fx:id="systemUptimeLabel" text="143245" />
-         </children>
-      </VBox>
-      <VBox prefHeight="0.0" prefWidth="100.0">
-         <children>
             <Label text="Additional metadata" />
             <Label fx:id="metadataLabel" text="143245" />
          </children>
